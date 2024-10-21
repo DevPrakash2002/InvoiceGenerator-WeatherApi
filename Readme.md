@@ -124,7 +124,7 @@
 	
 #### For Invoice Generation 
 	
-			URL: http://localhost:8081/api/invoice/generate-pdf
+			URL: http://localhost:8081/api/invoice/generate-invoice
 	
 Headers:
 
@@ -269,4 +269,8 @@ Response:
 5. API documentation
 6. Troubleshooting guide
 7. List of dependencies
+
+### Not Implemented
+
+1. Cache Data (Weather API)
 

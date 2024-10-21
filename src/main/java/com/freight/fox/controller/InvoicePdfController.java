@@ -29,7 +29,7 @@ public class InvoicePdfController {
         this.pdfGeneratorService = pdfGeneratorService;
     }
 
-    @PostMapping(value = "/generate-pdf", produces = MediaType.APPLICATION_PDF_VALUE)
+    @PostMapping(value = "/generate-invoice", produces = MediaType.APPLICATION_PDF_VALUE)
     public ResponseEntity<byte[]> generatePdf(@RequestBody Invoice invoice) {
         try {
             logger.info("Received request to generate PDF");
