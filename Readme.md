@@ -126,11 +126,13 @@
 	
 			URL: http://localhost:8081/api/invoice/generate-pdf
 	
-	Headers:
+Headers:
+
 			CopyContent-Type: application/json
 			Accept: application/pdf
 	
-	Body (JSON):
+Body (JSON):
+
 			jsonCopy{
 			    "seller": "ABC Company Ltd",
 			    "sellerAddress": "123 Business Street, City, State 12345",
@@ -148,7 +150,7 @@
 			    ]
 			}
 			
-	3. Send the request and save the generated PDF.
+3. Send the request and save the generated PDF.
 	
 #### For Weather API:
 	
