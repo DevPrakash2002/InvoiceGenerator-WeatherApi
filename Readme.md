@@ -20,10 +20,10 @@
 
 ### Prerequisites
 
-	- Java JDK 17 or later
-	- Maven 3.6 or later
-	- Your favorite IDE (Spring Tool Suite, IntelliJ IDEA, or Eclipse)
-	- Postman (for testing)
+- Java JDK 17 or later
+- Maven 3.6 or later
+- Your favorite IDE (Spring Tool Suite, IntelliJ IDEA, or Eclipse)
+- Postman (for testing)
 
 ### Project Structure
 	freightfox_project/
@@ -59,60 +59,65 @@
 
 1. Clone the repository:
 
-	git clone <repository-url>
-	cd freightfox_project
+		git clone <repository-url>
+
+		cd InvoiceGenerator-WeatherApi
+
 
 2. Update pom.xml with the following dependencies:
 
-	<dependencies>
-	    <dependency>
-	        <groupId>org.springframework.boot</groupId>
-	        <artifactId>spring-boot-starter-web</artifactId>
-	    </dependency>
-	    <dependency>
-	        <groupId>org.springframework.boot</groupId>
-	        <artifactId>spring-boot-starter-thymeleaf</artifactId>
-	    </dependency>
-	    <dependency>
-	        <groupId>org.xhtmlrenderer</groupId>
-	        <artifactId>flying-saucer-pdf</artifactId>
-	        <version>9.1.22</version>
-	    </dependency>
-	    <dependency>
-	        <groupId>org.projectlombok</groupId>
-	        <artifactId>lombok</artifactId>
-	        <optional>true</optional>
-	    </dependency>
-	</dependencies>
+		<dependencies>
+		    <dependency>
+		        <groupId>org.springframework.boot</groupId>
+		        <artifactId>spring-boot-starter-web</artifactId>
+		    </dependency>
+		    <dependency>
+		        <groupId>org.springframework.boot</groupId>
+		        <artifactId>spring-boot-starter-thymeleaf</artifactId>
+		    </dependency>
+		    <dependency>
+		        <groupId>org.xhtmlrenderer</groupId>
+		        <artifactId>flying-saucer-pdf</artifactId>
+		        <version>9.1.22</version>
+		    </dependency>
+		    <dependency>
+		        <groupId>org.projectlombok</groupId>
+		        <artifactId>lombok</artifactId>
+		        <optional>true</optional>
+		    </dependency>
+		</dependencies>
 
 3. Configure API keys:
 
-	Open src/main/resources/application.properties
+	Open
+
+   		src/main/resources/application.properties
 	
 	Update the following properties with your API keys:
 
-	* geoapify.api.key=your_geoapify_api_key
+   	* geoapify.api.key=your_geoapify_api_key
 	* openweathermap.api.key=your_openweathermap_api_key
 
-4. Build the project:
+5. Build the project:
 
-    mvn clean install
+    	mvn clean install
 
 ### Configuration
 
 1. Configure application.properties:
 
-	propertiesCopyspring.thymeleaf.mode=HTML5
-	spring.thymeleaf.encoding=UTF-8
-	spring.thymeleaf.prefix=classpath:/templates/
-	spring.thymeleaf.suffix=.html
-	spring.thymeleaf.cache=false
-	server.port=8081
+		propertiesCopyspring.thymeleaf.mode=HTML5
+		spring.thymeleaf.encoding=UTF-8
+		spring.thymeleaf.prefix=classpath:/templates/
+		spring.thymeleaf.suffix=.html
+		spring.thymeleaf.cache=false
+		server.port=8081
 	
 	
 
 2. Ensure the template file invoice-template.html is in the correct location:
-	src/main/resources/templates/invoice-template.html
+   
+		src/main/resources/templates/invoice-template.html
 
 ### Usage
 
@@ -124,16 +129,24 @@
 	
 #### For Invoice Generation 
 	
-			URL: http://localhost:8081/api/invoice/generate-invoice
+URL: 
+
+	http://localhost:8081/api/invoice/generate-invoice
 	
 Headers:
 
-			CopyContent-Type: application/json
-			Accept: application/pdf
+CopyContent-Type:
+
+  			 application/json
+Accept: 
+			
+   			application/pdf
 	
 Body (JSON):
 
-			jsonCopy{
+json
+
+   			{
 			    "seller": "ABC Company Ltd",
 			    "sellerAddress": "123 Business Street, City, State 12345",
 			    "sellerGstin": "29ABCDE1234F1Z5",
@@ -154,7 +167,8 @@ Body (JSON):
 	
 #### For Weather API:
 	
-		Body (JSON):
+Body (JSON):
+  
 				{
 				    "pincode": "28012",
 				    "date": "2024-10-21"
@@ -165,7 +179,10 @@ Body (JSON):
 
 #### Generate PDF Invoice
 
-	Endpoint: POST /api/invoice/generate-pdf
+Endpoint: 
+	POST 
+		
+  	/api/invoice/generate-invoice
 
 Headers:
 
@@ -174,7 +191,8 @@ Headers:
 
 Request Body:
 
-	json:
+json:
+
 		{
 			"seller": "string",
 			"sellerAddress": "string",
@@ -194,15 +212,16 @@ Request Body:
 
 Response:
 
-		* Content-Type: application/pdf
-		* Status: 200 OK
-		* Body: PDF file
+* Content-Type: application/pdf
+* Status: 200 OK
+* Body: PDF file
 
 #### For Weather API:
 
 Request Body:
 
-	json:
+json:
+ 
 			{
 			"pincode": "28012",
 			"date": "2024-10-21"
@@ -210,10 +229,11 @@ Request Body:
 
 Response:
 
-		* Status: 200 OK
-		* Body: 
-			Json :
-					{
+* Status: 200 OK
+* Body: 
+		Json :
+  
+			{
 			"temperature": 292.15,
 			"humidity": 65,
 			"description": "scattered clouds",
